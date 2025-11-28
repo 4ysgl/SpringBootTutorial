@@ -1,5 +1,6 @@
 package com.aysglakts.repository;
 
+import java.util.Iterator;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,6 +8,9 @@ import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 
 import com.aysglakts.model.Employee;
+
+
+import lombok.Getter;
 
 @Repository
 public class EmployeeRepository
@@ -16,5 +20,24 @@ public class EmployeeRepository
 	
 public List<Employee> getAllEmployeeList() {
 return employeList;
+
 }
+public Employee getAllEmployeeById(int id) {
+	Employee findEmployee=null;
+	
+	for (Employee employee: employeList)
+	{
+		if (id==employee.getId())
+		{
+			
+			findEmployee=employee;
+			break;
+		
+			
+		}
+	}
+	return findEmployee;
+	
+}
+
 }

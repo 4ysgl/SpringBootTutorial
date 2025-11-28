@@ -10,6 +10,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 
 
@@ -30,7 +31,11 @@ public List<Employee> getAllEmployees(){
 		 return employeeService.getAllEmployeeList();
 		
 	
+	
 }
+@GetMapping("/employee-list/{id}")
+public Employee getEmployeeById(@PathVariable int id)
+{
+return employeeService.getEmployeeById(id);
 
-
-}
+}}

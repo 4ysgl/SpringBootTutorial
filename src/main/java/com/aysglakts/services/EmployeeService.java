@@ -24,4 +24,8 @@ public List<Employee> getAllEmployeeList()
 	
 	
 }
+public Employee getEmployeeById(int id)
+{
+	return employeeRepository.getAllEmployeeById(id);
+}
 }
