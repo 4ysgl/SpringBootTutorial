@@ -23,9 +23,16 @@ public List<Employee> getAllEmployeeList()
 	
 	
 	
+	
 }
 public Employee getEmployeeById(int id)
 {
 	return employeeRepository.getAllEmployeeById(id);
+}
+
+public List<Employee> getEmployeeWithParams(String firstName,String lastName) {
+	return employeeRepository.getEmployeeWithParams(firstName, lastName);
+	
+	
 }
 }

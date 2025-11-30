@@ -1,5 +1,6 @@
 package com.aysglakts.repository;
 
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
@@ -40,4 +41,44 @@ public Employee getAllEmployeeById(int id) {
 	
 }
 
+
+public List<Employee> getEmployeeWithParams(String firstName,String lastName)
+{
+List<Employee> employeeWithParams=new ArrayList<>();
+for (Employee employee :employeList) 
+{
+	if (firstName!=null && lastName !=null) 
+	{
+		if (employee.getFirstName().equalsIgnoreCase(firstName)
+			&& employee.getLastName().equalsIgnoreCase(lastName)){
+				employeeWithParams.add(employee);
+			}
+		}
+	
+if (firstName!=null && lastName == null) 
+{
+	if (employee.getFirstName().equalsIgnoreCase(firstName)){
+			employeeWithParams.add(employee);
+		}
+	}
+
+
+if (firstName==null && lastName != null) 
+{
+	if (employee.getLastName().equalsIgnoreCase(lastName)){
+			employeeWithParams.add(employee);
+		}
+	}
+}return employeeWithParams;
+
+
 }
+
+}
+
+
+	
+
+
+
+

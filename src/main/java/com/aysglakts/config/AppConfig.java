@@ -13,7 +13,7 @@ public class AppConfig {
 public  List<Employee> emplpList() {
 	List< Employee> employeelList =new ArrayList<>();
 	employeelList.add(new Employee(1,"Aysegül","AKTAŞ"));
-	employeelList.add(new Employee(2,"MELİS","TAŞ"));
+	employeelList.add(new Employee(2,"MELİS","TASS"));
 	employeelList.add(new Employee(4,"SELMA","AŞ"));
 	employeelList.add(new Employee(3,"NAİME","ATAŞ"));
 	return employeelList;

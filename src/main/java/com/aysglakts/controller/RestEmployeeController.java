@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 
 @RestController
-@RequestMapping("/rest/api")
+@RequestMapping("/rest/api/employee")
 
 
 public class RestEmployeeController 
@@ -26,16 +26,25 @@ public class RestEmployeeController
 	
 	
 	
-	@GetMapping("/employee-list")
+	@GetMapping("/list")
 public List<Employee> getAllEmployees(){
 		 return employeeService.getAllEmployeeList();
 		
 	
 	
 }
-@GetMapping("/employee-list/{id}")
+@GetMapping("/list/{id}")
 public Employee getEmployeeById(@PathVariable int id)
 {
 return employeeService.getEmployeeById(id);
+
+}
+@GetMapping("/with-params")
+public List<Employee> getEmployeeWithParams(@RequestParam (name = "firstName",required = false)String firstName,
+		@RequestParam(name = "lastName",required = false)String lastName)
+{
+
+	return employeeService.getEmployeeWithParams(firstName, lastName);
+
 
 }}
