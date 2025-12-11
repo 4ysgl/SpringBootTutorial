@@ -10,14 +10,13 @@ import com.aysglakts.model.Employee;
 @Configuration
 public class AppConfig {
 	@Bean
-public  List<Employee> emplpList() {
-	List< Employee> employeelList =new ArrayList<>();
-	employeelList.add(new Employee(1,"Aysegül","AKTAŞ"));
-	employeelList.add(new Employee(2,"MELİS","TASS"));
-	employeelList.add(new Employee(4,"SELMA","AŞ"));
-	employeelList.add(new Employee(3,"NAİME","ATAŞ"));
-	return employeelList;
-	
-	
-}
+	public List<Employee> employeList() {
+	    List<Employee> employeList = new ArrayList<>();
+	    employeList.add(new Employee(1,"AKTAS","AYSE"));
+	    employeList.add(new Employee(2,"TASS","MELİS"));
+	    employeList.add(new Employee(3,"AA","BB"));
+	    
+	    return employeList;
+	}
+
 }
