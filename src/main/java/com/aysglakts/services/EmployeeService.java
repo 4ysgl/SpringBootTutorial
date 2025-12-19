@@ -35,5 +35,9 @@ public Employee getEmployeeById(int id)
 public List<Employee> getEmployeeWithParams(String firstName,String lastName) {
 	return employeeRepository.getEmployeeWithParams(firstName, lastName);
 	
+}public  boolean deleteEmployee(int id) 
+{
+	return employeeRepository.deleteEmployee(id);
+	
 }
 }

@@ -37,4 +37,9 @@ public class RestEmployeeController {
 		return employeeService.getEmployeeWithParams(firstName, lastName);
     	
     }
+    @DeleteMapping("/employee/delete-employee/{id}")
+    public boolean getdeleteEmployee(@PathVariable int id) {
+        return employeeService.deleteEmployee(id);
+    }
+
 }

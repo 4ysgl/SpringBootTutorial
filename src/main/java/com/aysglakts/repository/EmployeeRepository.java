@@ -1,6 +1,7 @@
 package com.aysglakts.repository;
 
 
+import java.awt.color.ICC_ColorSpace;
 import java.util.ArrayList;
 
 import java.util.List;
@@ -70,7 +71,30 @@ public class EmployeeRepository {
 
         return employeeWithParams;
     }
+public boolean deleteEmployee(int id) {
+	
+Employee deleteEmployee=null;
 
+
+    for (Employee employee : employeList)
+    {if (employee.getId()==id)
+    {
+    	deleteEmployee=employee;
+    	break;
+    	
+    }
+    else
+    {
+    	return false;
+    	
+    }
+    }
+	employeList.remove(deleteEmployee);
+	
+	
+	return true;
+	
+}
 }
 
 
