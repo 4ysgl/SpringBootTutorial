@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.aysglakts.model.Employee;
+import com.aysglakts.model.UpdateEmployee;
 import com.aysglakts.repository.EmployeeRepository;
 
 @Service
@@ -38,6 +39,11 @@ public List<Employee> getEmployeeWithParams(String firstName,String lastName) {
 }public  boolean deleteEmployee(int id) 
 {
 	return employeeRepository.deleteEmployee(id);
+	
+}
+
+public Employee updateEmployee(int id,UpdateEmployee request) {
+	return employeeRepository.updateEmployee(id, request);
 	
 }
 }

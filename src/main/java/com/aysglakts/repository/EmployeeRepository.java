@@ -3,12 +3,13 @@ package com.aysglakts.repository;
 
 import java.awt.color.ICC_ColorSpace;
 import java.util.ArrayList;
-
+import java.util.Iterator;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import com.aysglakts.model.Employee;
+import com.aysglakts.model.UpdateEmployee;
 
 @Repository
 public class EmployeeRepository {
@@ -93,6 +94,41 @@ Employee deleteEmployee=null;
 	
 	
 	return true;
+	
+}
+private Employee findEmployeeById(int id) {
+	Employee findEmployee=null;
+	for(Employee employee:employeList)
+	{
+		if (id==employee.getId()) {
+			findEmployee=employee;
+			break;
+			
+			
+		}
+	}
+	
+	
+	
+	return findEmployee;
+}
+
+
+public Employee updateEmployee(int id, UpdateEmployee request) {
+	Employee findEmployee=findEmployeeById(id);
+	if (findEmployee!=null) {
+		deleteEmployee(id);
+	}
+	
+
+	Employee updateEmployee=new Employee();
+	updateEmployee.setId(id);
+	updateEmployee.setFirstName(request.getFirstName());
+	updateEmployee.setLastName(request.getLastName());
+	
+	employeList.add(updateEmployee);
+	
+	return updateEmployee;
 	
 }
 }

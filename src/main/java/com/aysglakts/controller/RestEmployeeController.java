@@ -3,6 +3,7 @@ package com.aysglakts.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import com.aysglakts.model.Employee;
+import com.aysglakts.model.UpdateEmployee;
 import com.aysglakts.services.EmployeeService;
 import java.util.List;
 
@@ -41,5 +42,14 @@ public class RestEmployeeController {
     public boolean getdeleteEmployee(@PathVariable int id) {
         return employeeService.deleteEmployee(id);
     }
+    
+    
+    @PutMapping("/employee/update-employee/{id}")
+    public Employee updateEmployee(@PathVariable int id,@RequestBody UpdateEmployee request ) {
+		return employeeService.updateEmployee(id, request);
+		
+	}
+    
+    
 
 }
